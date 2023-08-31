@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Pacifico&family=Quicksand:wght@300&family=Russo+One&family=Ubuntu&display=swap');
+*{
+    margin:0px;
+}
+html, body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+}
+header{
+    display: block;
+    text-shadow:
+    0px 0px 10px rgb(60, 136, 235),
+    0px 0px 10px #FFFFFF,
+    0px 0px 10px #FFFFFF;
+   
+    background-color:rgba(0, 0, 0, 0.7);
+    border-radius: 45px;
+    color: white;
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+}
+body{
+    background: url('../fundogame.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    background-color:rgba(0, 0, 0, 0.7);
+    background-blend-mode: luminosity;
+   
+}
+#panelgame{
+    border-radius: 45px;
+    margin-top: 50px;
+    background-color:rgba(0, 0, 0, 0.7);
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#divtempo{
+    width: 100%;
+}
+#divresto{
+    width: 100%;
+}
+ul,li{
+    width: 100%;
+    list-style: none;
+}
+li{
+    width:100%;
+    
+    /* background-color: wheat; */
+}
+#verpalavra{
+    border-top-right-radius: 40px;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 1px;
+    font-family: 'Ubuntu', cursive;
+    font-weight: bold;
+    font-size: 35px;
+    color: #ffffff;
+    text-shadow:
+    0px 0px 10px rgb(0, 0, 0),
+    0px 0px 10px #0d0d0d,
+    0px 0px 10px #000000;
+}
+#digitarpalavra{
+    border-bottom-right-radius: 40px;
+    width: 80%;
+    height: 50px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 40px;
+}
+button{
+    margin-top: 5px;;
+    font-size:50px;
+    border-radius: 40px;
+    border-color: rgba(1, 1, 14, 0.7);
+    background-color: white;
+    font-family: 'Luckiest Guy', cursive;
+    outline: none;
+   
+}
+button:hover{
+    background-color: rgba(1, 1, 1, 0.7);
+    color: white;
+    text-shadow:
+    0px 0px 10px rgb(60, 136, 235),
+    0px 0px 10px #FFFFFF,
+    0px 0px 10px #FFFFFF;
+}
+label{
+    font-size: 30px;
+    color:white;
+    font-family: 'Luckiest Guy', cursive;
+}
+#cronometro{
+    font-size: 45px; 
+}
+@media only screen and (max-width:700px){
+    body{
+        background: url('../fundogamemobile.gif');
+        background-size: 100% 100%;
+    }
+    #panelgame{
+        width: 500px;
+        height: 250px;
+    }
+}
+@media only screen and (max-width:514px){
+    body{
+        background: url('../fundogamemobile.gif');
+        background-size: 100% 100%;
+    }
+    #panelgame{
+        width: 400px;
+        height: 250px;
+    }
+    #verpalavra{
+    
+        width: 75%;
+        
+        
+    }
+    #digitarpalavra{
+        
+        width: 75%;
+       
+    }
+}
+@media only screen and (max-width:400px){
+    body{
+        background: url('../fundogamemobile.gif');
+        background-size: 100% 100%;
+    }
+    #panelgame{
+        width: 300px;
+        height: 270px;
+    }
+    #verpalavra{
+        width: 70%;
+        font-size: 25px; 
+    }
+    #digitarpalavra{
+        font-size: 25px;
+        width: 70%;
+    }
+}

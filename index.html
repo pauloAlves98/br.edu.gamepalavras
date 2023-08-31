@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game Palavras</title>
+</head>
+<body>
+    <header>
+        <h1>SPEED PALAVRAS</h1>
+        
+    </header>
+    <button id='iniciar'>Iniciar</button>
+    <div id="panelgame">
+        <div id="divtempo"><label>TEMPO: </label><label id="cronometro">15s</label></div>
+        <div id="divresto"><label>PALAVRAS RESTANTES:</label><label id='restante'>10</label></div>        
+        <ul>
+            <li>
+                <input id="verpalavra" type="text">
+            </li>
+            <li>
+                <input id="digitarpalavra" type="text" placeholder="Digite a palavra aqui">
+            </li>
+            <li>
+                <label id="resultado"></label>
+            </li>
+        </ul>
+    </div>
+   <script src="game.js">
+    
+   </script>
+</body>
+</html>
