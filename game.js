@@ -46,7 +46,7 @@
         function buscarPalavras(qnt){//consulta a api
             $.ajax({
              method:'GET',
-             url:'https://cors-anywhere.herokuapp.com/https://gerador-nomes.wolan.net/nomes/'+qnt.toString(),//api
+             url: 'https://gerador-nomes.wolan.net/nomes/'+qnt.toString(),//api
              success:function(data,textStatus){//caso a consulta seja feita com sucesso.
                 palavras = data;
                 console.log(palavras)
