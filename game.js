@@ -63,7 +63,7 @@
                 },1000);
              }
          }).fail(function(jqXHR, textStatus, msg){
-                 alert("Error ao buscar palavras: "+textStatus);
+                 alert("Error ao buscar palavras: "+textStatus+" "+msg+" "+jqXHR);
          }); 
         }
 
