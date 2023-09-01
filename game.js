@@ -3,10 +3,11 @@
     var ntempo = 15;
     var tempo = null; 
     var QUANTPALAVRAS = 5;  
+    const proxyUrl = "https://api.allorigins.win/raw?url=";
+    const apiUrl = "https://gerador-nomes.wolan.net/nomes/";
 
     $(function(){
         $("#verpalavra").attr("disabled", true)//desabilita a digitação no input
-
         $("#digitarpalavra").on("keyup",function(){//checagem ao clicar no input de digitação
             if(palavras.length>0 && $("#digitarpalavra").val().toUpperCase()===palavras[0].toUpperCase()){//verifica se foi digitado correto
                 $("#resultado").text("Correto");
@@ -26,7 +27,8 @@
 
 
         function verificaSeGanhou(){
-            if(palavras.length==0&&ntempo>0){
+            //Caso esgote o tempo e tenha terminado as palavras
+            if(palavras.length==0 && ntempo>0){
                 alert("Proximo Nivel!")
                 clearInterval(tempo) 
                 proxNivel();//abrir 
@@ -36,17 +38,16 @@
                 reset();
                 $("#iniciar").show()
                 $("#panelgame").hide()
-                console.log("Condicao 2")
             }
             else{
                 decrementaTempo();
-                console.log("Condicao 3")
             }
         }
         function buscarPalavras(qnt){//consulta a api
+            
             $.ajax({
              method:'GET',
-             url: 'https://gerador-nomes.wolan.net/nomes/'+qnt.toString(),//api
+             url: proxyUrl + encodeURIComponent(apiUrl+qnt.toString()),//api
              success:function(data,textStatus){//caso a consulta seja feita com sucesso.
                 palavras = data;
                 console.log(palavras)
@@ -63,7 +64,7 @@
                 },1000);
              }
          }).fail(function(jqXHR, textStatus, msg){
-                 alert("Error ao buscar palavras: "+textStatus+" "+msg+" "+jqXHR);
+                 alert("Error ao buscar palavras: "+textStatus.toString()+" "+msg+" "+jqXHR.toString());
          }); 
         }
 
@@ -73,9 +74,7 @@
         }
 
         function setTempo(){//atualiza o tempo na tela.
-            $('#cronometro').text(ntempo.toString()+"  s")   
-            // if(ntempo==0)
-            //     clearInterval(tempo)    
+            $('#cronometro').text(ntempo.toString()+"  s")     
         }
 
         function reset(){
@@ -102,6 +101,8 @@
             $("#digitarpalavra").val("")
             buscarPalavras( QUANTPALAVRAS );
         }
+
+
         reset();
         // $.get("https://gerador-nomes.herokuapp.com/nomes/45",function(data,status){
         //     alert("Data: " + data + "\nStatus: " + status);
